@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package pingpong;
+
+// The pingpong service definition
+service Pingponger {
+    // Sends a ping
+    rpc Ping(PingRequest) returns (PongResponse) {}
+}
+
+// The request message containing the ping name
+message PingRequest {
+    string name = 1;    // ระบุ tag ที่ไม่ให้ซ้ำกันเพื่อใช้ในการทำ binary endcode
+}
+
+// The response message containing the ping
+message PongResponse {
+    string message = 1; // ระบุ tag ที่ไม่ให้ซ้ำกันเพื่อใช้ในการทำ binary endcode
+}
